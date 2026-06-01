@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Заполните поля</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="form-wrapper">
+    <header class="form-header">
+        <h1 class="form-title">Заполните поля</h1>
+        <span class="form-subtitle">ну пожалуйста</span>
+    </header>
+
+    <form class="form-card" action="#" method="POST">
+        <section class="form-section form-section--main">
+            <h2 class="section-title">Основное</h2>
+            <div class="form-row">
+                <label class="form-label" for="name">Имя</label>
+                <div class="form-input-wrapper">
+                    <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="text-input"
+                            placeholder="по паспорту"
+                            autocomplete="name"
+                            required
+                    >
+                </div>
+            </div>
+
+            <div class="form-row">
+                <label class="form-label" for="mood-color">Цвет вашего настроения</label>
+                <div class="form-input-wrapper">
+                    <input
+                            type="color"
+                            id="mood-color"
+                            name="moodColor"
+                            class="color-input"
+                            value="#0000ff"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section class="form-section form-section--additional">
+            <h2 class="section-title">Дополнительное</h2>
+
+            <div class="form-row">
+                <label class="form-label" for="comment">Комментарий</label>
+                <div class="form-input-wrapper">
+            <textarea
+                    id="comment"
+                    name="comment"
+                    class="textarea"
+                    placeholder="Напишите хоть что-нибудь.&#10;Если хотите, конечно."
+            ></textarea>
+                </div>
+            </div>
+        </section>
+
+        <div class="form-options">
+            <div class="option-item">
+                <input
+                        type="radio"
+                        id="radio-option"
+                        name="radioGroup"
+                        class="option-input"
+                >
+                <label class="option-label" for="radio-option">
+                    Ну а тут просто полежит радиобатон
+                </label>
+            </div>
+
+            <div class="option-item">
+                <input
+                        type="checkbox"
+                        id="agree"
+                        name="agree"
+                        class="option-input"
+                        checked
+                        required
+                >
+                <label class="option-label" for="agree">
+                    Соглашаюсь на всё, что бы вы не придумали и осознаю, что это может означать
+                    <a href="#" target="_blank">что угодно</a>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="submit-button">
+                Отправить все мои данные
+            </button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
