@@ -1,0 +1,176 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title>Тестовые задания</title>
+	<style>
+	body {
+		font-size: 1.3em;
+	}
+
+	a,
+	.spoiler__label {
+		color: blue;
+	}
+	a:hover,
+	.spoiler__label:hover {
+		color: red;
+	}
+	
+	.spoiler__label {
+		border-bottom: 1px dotted;
+		cursor: pointer;
+		user-select: none;
+	}
+	.spoiler__content {
+		display: none;
+	}
+	.spoiler__field {
+		position: absolute;
+		visibility: hidden;
+		pointer-events: none;
+	}
+	.spoiler__field:checked ~ .spoiler__content {
+		display: block;
+	}
+	</style>
+</head>
+
+<pre>
+<strong>Тестовые задания 1.0.1</strong>
+
+Выполняйте
+— в любом порядке,
+— так, как считаете правильным.
+
+Вы можете не делать их до конца, но будьте готовы ответить на соответствующие вопросы.
+
+Задания упорядочены по сложности, начиная с простых.
+
+К заданию приложены макеты.
+Открывать макеты и картинки в формате <code>psd</code> можно бесплатным инструментом <a href="https://www.photopea.com/" target="_blank">Photopea</a>.
+Или фотошопом, если есть.
+
+<div class="spoiler"><input type="checkbox" class="spoiler__field" id="measure"><label class="spoiler__label" for="measure"><strong>Критерии оценки</strong></label>
+<div class="spoiler__content">
+Верстальщик-стажёр
+	начальные знания HTML и CSS
+
+	семантичность
+		используются теги, соответствующие содержимому
+		классы называются соответственно предназначению
+
+	аккуратность
+		в коде нет лишних табуляций в конце строк, тройных пробелов между словами
+			проверяется отображением невидимых символов
+		пусть задания и не выполнены полностью, но решения выглядят законченными
+			в них нет больших закомментированных кусков кода
+			страницы хоть и не выглядят так же, как на дизайне,
+			отличаются лишь оформлением, не структурой
+
+Верстальщик
+	отличные знания HTML и CSS, начальные знания PHP
+
+	полное соответствие вёрстки макету
+		проверяется наложением снимка на макет
+			отличия могут быть только из-за разной отрисовки в разных браузерах
+			например, шрифты разные программы рисуют по-своему
+
+	кроссбраузерность
+		открытие вёрстки в разных браузерах не влияет заметно на результат
+		отличия, как было упомянуто в прошлом пункте, связаны с отрисовкой текста
+		или, если сильно повезёт, с ошибками в браузерах
+			в случае ошибки браузера, в решении ожидается ссылка на задачу в багтрекере соответствующего браузера
+
+	грамотность
+		классы называются существующими английскими словами
+		русский текст преимущественно без ошибок
+
+Технолог
+	Отличные знания HTML, CSS и JS, хорошие знания PHP
+
+	адекватная методология
+		код выглядит однородно
+			написанным одним человеком, по единым принципам
+			код легко изменяем
+
+	не усложняет
+		использует технологию, соответствующую задаче
+			придумывает как эффективно обходиться стилями, вместо использования скрипта
+			и использует скрипт там, где стили помешают расширению
+
+	самостоятельность
+		может придумать, как будут выглядеть состояния элементов
+		и сделает это гармонично
+	
+	оптимизация
+		код написан эффективно и оптимально
+		картинки пожаты
+
+Помните, что:
+— опытный круче неопытного;
+— вдумчивый круче скоропалительного;
+— готовый разобраться круче упёртого не знающего;
+— упорный круче аморфного;
+— доделанное задание круче недоделанного.
+</div></div>
+
+<div class="spoiler"><input type="checkbox" class="spoiler__field" id="text"><label class="spoiler__label" for="text"><strong>Текст</strong></label>
+<div class="spoiler__content">
+Сверстайте произвольный текст.
+Чем будет больше использоваться разнообразных элементов, тем лучше.
+</div></div>
+
+<div class="spoiler"><input type="checkbox" class="spoiler__field" id="form"><label class="spoiler__label" for="form"><strong>Форма</strong></label>
+<div class="spoiler__content">
+<img src="form/form.png" alt="Форма" width="766" height="654">
+</div></div>
+
+<div class="spoiler"><input type="checkbox" class="spoiler__field" id="just-buttons"><label class="spoiler__label" for="just-buttons"><strong>Кнопки</strong></label>
+<div class="spoiler__content">
+<img src="just-buttons/buttons.png" alt="Кнопки" width="810" height="287">
+Несколько вариантов кнопок в разных состояниях.
+Нужно сверстать их так, чтобы можно было легко добавить новое состояние или вид кнопки.
+
+<a href="just-buttons/buttons.psd">buttons.psd</a></div></div>
+
+<div class="spoiler"><input type="checkbox" class="spoiler__field" id="scheme"><label class="spoiler__label" for="scheme"><strong>Схема</strong></label>
+<div class="spoiler__content">
+<img src="scheme/scheme.png" alt="Схема" width="985" height="761">
+</div></div>
+
+<div class="spoiler"><input type="checkbox" class="spoiler__field" id="slider"><label class="spoiler__label" for="slider"><strong>Витрина</strong></label>
+<div class="spoiler__content">
+Нужно сверстать витрину.
+Она должна прокручиваться полосой снизу.
+<img src="slider/slider.png" alt="Витрина" width="1293" height="447">
+</div></div>
+
+<div class="spoiler"><input type="checkbox" class="spoiler__field" id="black-page"><label class="spoiler__label" for="black-page"><strong>Чёрная страница</strong></label>
+<div class="spoiler__content">
+С этой страницей творятся странные дела.
+
+1) Она отчего-то долго грузится.
+2) Иногда она грузится дольше, чем просто долго.
+3) Как-то она странно выглядит.
+4) Текст на этой странице немного не соответствует правилам нашего языка.
+5) Тот, кто сделал эту страницу, бесследно исчез.
+
+Нужно разгадать загадку чёрной страницы и победить все её проблемы.
+
+<a href="black-page/" target="_blank">Чёрная страница</a></div></div>
+
+<div class="spoiler"><input type="checkbox" class="spoiler__field" id="beautiful-button"><label class="spoiler__label" for="beautiful-button"><strong>Красота</strong></label>
+<div class="spoiler__content">
+<strong>Кнопка</strong>
+<img src="beautiful-button/button.png" alt="Кнопка" width="180" height="209">
+Наш дизайнер проснулся от криосна и нарисовал кнопку такой, как было принято в его время.
+Сверстайте её максимально приближенно к макетам и анимируйте переходы между показанными состояниями.
+<a href="beautiful-button/button.psd">button.psd</a>
+
+<strong>Чекбокс</strong>
+<img src="beautiful-button/onoff.gif" alt="Чекбокс, https://dribbble.com/shots/4465939-On-off" width="400" height="300">
+Потом он увлёкся и сделал вот такой чекбокс.
+Но от него не осталось даже исходников.
+Удачи!</div></div>
+
+</pre>
