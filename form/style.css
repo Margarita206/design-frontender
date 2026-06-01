@@ -200,9 +200,20 @@ body {
 }
 
 @media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
     .form-header {
         flex-direction: column;
+        align-items: flex-start;
         gap: 8px;
+    }
+
+    .form-section,
+    .form-options,
+    .form-actions {
+        padding: 16px;
     }
 
     .form-row {
@@ -215,23 +226,38 @@ body {
         text-align: left;
         padding-right: 0;
         margin-bottom: 6px;
+        font-size: 14px;
     }
 
-    .section-title,
-    .option-item,
-    .submit-button {
+    .form-input-wrapper {
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 18px;
         padding-left: 0;
+        margin-bottom: 12px;
+    }
+
+    .option-item {
+        flex-direction: row;
+        align-items: flex-start;
+        padding-left: 0;
+    }
+
+    .option-label {
+        width: 100%;
         text-align: left;
+        padding-right: 0;
+        margin-bottom: 6px;
+    }
+
+    .option-input {
+        margin: 0 10px 0 0;
     }
 
     .submit-button {
         margin-left: 0;
-    }
-
-    .form-section,
-    .form-options,
-    .form-actions {
-        padding-left: 20px;
-        padding-right: 20px;
+        width: 100%;
     }
 }
