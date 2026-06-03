@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Frontender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch">
+            <div class="switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </div>
+        </label>
+    </div>
+
+    <a href="../../index.html" class="back-link">← Назад ко всем заданиям</a>
+
+    <header class="page-header">
+        <nav class="nav">
+            <ul>
+                <li><a href="#semantics">Семантика</a></li>
+                <li><a href="#typography">Типографика</a></li>
+                <li><a href="#lists">Списки</a></li>
+                <li><a href="#table">Таблица</a></li>
+                <li><a href="#quote">Цитаты</a></li>
+                <li><a href="#code">Код</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article id="semantics" class="card">
+            <header class="article-header">
+                <h1>Семантическая вёрстка: зачем она нужна?</h1>
+                <div class="meta">
+                    <time datetime="2026-06-01">1 июня 2026</time>
+                    <span class="reading-time">5 мин чтения</span>
+                    <span class="author">Автор: Маргарита</span>
+                </div>
+            </header>
+
+            <section>
+                <h2>Введение</h2>
+                <p>Это пример <strong>семантической вёрстки</strong> с использованием разнообразных HTML-элементов.
+                    Здесь есть <em>акценты</em>,
+                    <mark>выделения</mark>,
+                    <code>инлайн-код</code> и даже <a href="https://example.com" target="_blank" rel="noopener">внешняя ссылка</a>.
+                </p>
+
+                <blockquote cite="https://ru.wikipedia.org/wiki/HTML">
+                    <p>HTML — это стандартный язык разметки для создания веб-страниц. Он описывает структуру контента, а не его оформление.</p>
+                    <footer>— Википедия</footer>
+                </blockquote>
+            </section>
+        </article>
+
+        <article id="typography" class="card">
+            <h2>Основы веб-типографики</h2>
+
+            <div class="content">
+                <h3>Заголовки разных уровней</h3>
+                <h1>H1 — самый важный заголовок</h1>
+                <h2>H2 — разделы</h2>
+                <h3>H3 — подразделы</h3>
+                <h4>H4 — мелкие подзаголовки</h4>
+                <h5>H5 — редко используются</h5>
+                <h6>H6 — самый мелкий</h6>
+
+                <h3>Выделение текста</h3>
+                <p>В тексте можно использовать <strong>жирный</strong> для важного, <em>курсив</em> для акцента,
+                    <u>подчёркнутый</u> для особого внимания,
+                    <del>зачёркнутый</del> для удалённого,
+                    <ins>вставленный</ins> для нового, <small>маленький</small> текст, <sup>верхний</sup> и <sub>нижний</sub> индексы.
+                </p>
+
+                <h3>Горизонтальные линии и абзацы</h3>
+                <p>Первый абзац с отступом.</p>
+                <hr>
+                <p>Второй абзац после горизонтальной линии.</p>
+
+                <h3>Адрес и контакты</h3>
+                <address>
+                    email: <a href="mailto:zhidovamargarita@gmail.com">zhidovamargarita@gmail.com</a><br>
+                    Адрес: г. Воронеж, ул. Ленина, д. 1
+                </address>
+            </div>
+        </article>
+
+        <section id="lists" class="card">
+            <h2>Разнообразные списки</h2>
+
+            <div class="lists-grid">
+                <div class="list-col">
+                    <h3>Маркированный список</h3>
+                    <ul>
+                        <li>Пункт первый</li>
+                        <li>Пункт второй
+                            <ul>
+                                <li>Вложенный подпункт</li>
+                                <li>Ещё один вложенный</li>
+                            </ul>
+                        </li>
+                        <li>Пункт третий</li>
+                    </ul>
+                </div>
+
+                <div class="list-col">
+                    <h3>Нумерованный список</h3>
+                    <ol>
+                        <li>Первый шаг</li>
+                        <li>Второй шаг</li>
+                        <li>Третий шаг
+                            <ol>
+                                <li>Подшаг А</li>
+                                <li>Подшаг Б</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="list-col">
+                    <h3>Список определений</h3>
+                    <dl>
+                        <dt>HTML</dt>
+                        <dd>Язык разметки гипертекста</dd>
+                        <dt>CSS</dt>
+                        <dd>Каскадные таблицы стилей</dd>
+                        <dt>JS</dt>
+                        <dd>Язык программирования для интерактива</dd>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <section id="table" class="card">
+            <h2>Сравнение технологий</h2>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Технология</th>
+                        <th>Год создания</th>
+                        <th>Типизация</th>
+                        <th>Сложность</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>HTML5</td>
+                        <td>2014</td>
+                        <td>Документ</td>
+                        <td>★☆☆☆☆</td>
+                    </tr>
+                    <tr>
+                        <td>CSS3</td>
+                        <td>2011</td>
+                        <td>Стили</td>
+                        <td>★★☆☆☆</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>1995</td>
+                        <td>Динамическая</td>
+                        <td>★★★☆☆</td>
+                    </tr>
+                    <tr>
+                        <td>TypeScript</td>
+                        <td>2012</td>
+                        <td>Статическая</td>
+                        <td>★★★★☆</td>
+                    </tr>
+                    <tr>
+                        <td>React</td>
+                        <td>2013</td>
+                        <td>Библиотека</td>
+                        <td>★★★☆☆</td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="4">* Сложность по шкале от 1 до 5</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section id="quote" class="card">
+            <h2>Мудрые мысли</h2>
+
+            <blockquote cite="https://ru.wikipedia.org/wiki/Тим_Бернерс-Ли">
+                <p>«Семантическая сеть — это не какая-то отдельная сеть, а расширение уже существующей,
+                    такое что в ней информация снабжена точно определённым смыслом, позволяющим человеку и
+                    машине успешно взаимодействовать.»</p>
+                <footer>— <cite>Тим Бернерс-Ли</cite>, создатель WWW</footer>
+            </blockquote>
+
+            <figure class="ascii-figure">
+                <figcaption>Пример цитаты в стиле ASCII</figcaption>
+                <pre>
+    ╔════════════════════════════════════╗
+    ║  "Красота спасёт мир"              ║
+    ║                — Ф.М. Достоевский  ║
+    ╚════════════════════════════════════╝
+                </pre>
+            </figure>
+
+            <details>
+                <summary>🔍 Подробнее о цитатах в HTML</summary>
+                <p>Тег <code>&lt;blockquote&gt;</code> используется для длинных цитат, <code>&lt;q&gt;</code> —
+                    для коротких, а <code>&lt;cite&gt;</code> — для указания источника.</p>
+            </details>
+        </section>
+
+        <section id="code" class="card">
+            <h2>Примеры кода</h2>
+
+            <h3>Инлайн-код</h3>
+            <p>Для вызова функции используйте <code>console.log('Hello World!');</code> в JavaScript.</p>
+
+            <h3>Блок кода</h3>
+            <pre><code>
+// Пример компонента на React
+const Button = ({ label, onClick }) => {
+    return (
+        &lt;button
+            className="btn-primary"
+            onClick={onClick}
+        &gt;
+            {label}
+        &lt;/button&gt;
+    );
+};
+            </code></pre>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <p>© 2026 Design Frontender — демонстрация семантической вёрстки</p>
+        <a href="#" class="back-to-top">↑ Наверх</a>
+    </footer>
+</div>
+
+<script>
+    const toggle = document.getElementById('theme-toggle');
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+</script>
+</body>
+</html>
