@@ -239,6 +239,22 @@ h3 {
     color: var(--accent-primary);
 }
 
+a {
+    color: #0066cc;
+}
+
+a:hover {
+    color: #0052a3;
+}
+
+[data-theme="dark"] a {
+    color: #58a6ff;
+}
+
+[data-theme="dark"] a:hover {
+    color: #79b8ff;
+}
+
 .importance-list {
     background: var(--surface-bg);
     padding: 20px 30px;
