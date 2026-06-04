@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Масоны Самсона</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1a1f2e;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .diagram {
+            position: relative;
+            width: 1100px;
+            height: 920px;
+            background: #232731;
+            border-radius: 0px;
+            padding: 30px;
+        }
+
+        .title {
+            color: #e2e8f0;
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+
+        .node {
+            position: absolute;
+            background: #ffffff;
+            padding: 12px 20px;
+            border-radius: 2px;
+            font-size: 14px;
+            text-align: center;
+            z-index: 2;
+            line-height: 1.4;
+            color: #000000;
+        }
+
+        /* Позиции блоков */
+        #alliksaar      { left: 20px;   top: 15px;  width: 240px; }
+
+        #duhast         { left: 720px;  top: 25px;  width: 200px; }
+        #anastasia      { left: 720px;  top: 120px; width: 200px; }
+
+        #stanislav      { left: 170px;  top: 190px; width: 200px; }
+        #trojan         { left: 720px;  top: 195px; width: 200px; }
+
+        #ludmila        { left: 280px;  top: 300px; width: 200px; }
+        #olga           { left: 280px;  top: 385px; width: 200px; }
+
+        #dmitriy        { left: 720px;  top: 385px; width: 200px; }
+        #kristina       { left: 720px;  top: 470px; width: 200px; }
+        #maksim         { left: 720px;  top: 555px; width: 200px; }
+
+        #sergey         { left: 280px;  top: 620px; width: 200px; }
+
+        #igor           { left: 170px;  top: 720px; width: 200px; }
+        #anton          { left: 170px;  top: 805px; width: 200px; }
+
+        .connections {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .connections line,
+        .connections polyline {
+            stroke: #ffffff;
+            stroke-width: 1;
+            fill: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="diagram">
+    <h2 class="title">Масоны Самсона</h2>
+
+    <div class="node" id="alliksaar">Алликсаар</div>
+
+    <div class="node" id="duhast">Ду Хаст<br>Вячеславович</div>
+    <div class="node" id="anastasia">Анастасия Ширинкина</div>
+
+    <div class="node" id="stanislav">Станислав<br>Клитотехнис</div>
+    <div class="node" id="trojan">Александр Троян</div>
+
+    <div class="node" id="ludmila">Людмила<br>Водолазская</div>
+    <div class="node" id="olga">Ольга Боргдорф</div>
+
+    <div class="node" id="dmitriy">Дмитрий Возигнуй</div>
+    <div class="node" id="kristina">Кристина Болтушкина</div>
+    <div class="node" id="maksim">Максим Висюлькин</div>
+
+    <div class="node" id="sergey">Сергей Брус</div>
+    <div class="node" id="igor">Игорь Зверёк</div>
+    <div class="node" id="anton">Антон Строй</div>
+
+    <svg class="connections">
+        <!-- Алликсаар - Ду Хаст / Анастасия -->
+        <line x1="260" y1="51"  x2="700" y2="51" />
+        <line x1="700" y1="51"  x2="700" y2="139" />
+        <line x1="700" y1="51"  x2="720" y2="51" />
+        <line x1="700" y1="139" x2="720" y2="139" />
+
+        <!-- Алликсаар - к Станиславу, Игорю, Антону -->
+        <line x1="140" y1="55"  x2="140" y2="825" />
+        <line x1="140" y1="212" x2="170" y2="212" />
+        <line x1="140" y1="742" x2="170" y2="742" />
+        <line x1="140" y1="827" x2="170" y2="827" />
+
+        <!-- Станислав - Троян -->
+        <line x1="370" y1="212" x2="720" y2="212" />
+
+        <!-- Станислав - к Людмиле, Ольге, Сергею -->
+        <line x1="270" y1="245" x2="270" y2="642" />
+        <line x1="270" y1="322" x2="280" y2="322" />
+        <line x1="270" y1="407" x2="280" y2="407" />
+        <line x1="270" y1="642" x2="280" y2="642" />
+
+        <!-- Ольга - Дмитрий -->
+        <line x1="480" y1="407" x2="710" y2="407" />
+
+        <!-- Дмитрий / Кристина / Максим -->
+        <line x1="710" y1="407" x2="710" y2="577" />
+        <line x1="710" y1="407" x2="720" y2="407" />
+        <line x1="710" y1="492" x2="720" y2="492" />
+        <line x1="710" y1="577" x2="720" y2="577" />
+
+        <!-- Дмитрий - Максим -->
+        <polyline points="920,407 940,407 940,577 920,577" />
+    </svg>
+</div>
+
+</body>
+</html>
