@@ -1,0 +1,178 @@
+body {
+    background-color: #1e222b;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.buttons-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 960px;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 24px 0;
+}
+
+.buttons-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    fill: currentColor;
+}
+
+.btn-arrow::after {
+    content: "";
+    display: inline-block;
+    margin-left: 8px;
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 5px solid #cc1d1d;
+    transition: border-left-color 0.2s ease;
+}
+
+.btn-gray {
+    background-color: #eaeaea;
+    color: #333333;
+    border-color: #cccccc;
+}
+
+.btn-gray.hover, .btn-gray:hover:not([disabled]) {
+    background-color: #f5f5f5;
+}
+
+.btn-gray.active, .btn-gray:active:not([disabled]) {
+    background-color: #d2d2d2;
+    border-color: #b5b5b5;
+}
+
+.btn-outline-red {
+    background-color: #eaeaea;
+    color: #333333;
+    border: 1.5px solid #cc1d1d;
+}
+
+.btn-outline-red.hover, .btn-outline-red:hover:not([disabled]) {
+    background-color: #f5f5f5;
+}
+
+.btn-outline-red.active, .btn-outline-red:active:not([disabled]) {
+    background-color: #cdcdcd;
+    border-color: #cc1d1d;
+    color: #555555;
+}
+
+.btn-red {
+    background-color: #cc1d1d;
+    color: #ffffff;
+}
+
+.btn-red.hover, .btn-red:hover:not([disabled]) {
+    background-color: #e53935;
+}
+
+.btn-red.active, .btn-red:active:not([disabled]) {
+    background-color: #990f0f;
+}
+
+.btn-green {
+    background-color: #689f38;
+    color: #ffffff;
+}
+
+.btn-green.hover, .btn-green:hover:not([disabled]) {
+    background-color: #7cb342;
+}
+
+.btn-green.active, .btn-green:active:not([disabled]) {
+    background-color: #4b7328;
+}
+
+.btn-outline-green {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1.5px solid #689f38;
+}
+
+.btn-outline-green.hover, .btn-outline-green:hover:not([disabled]) {
+    background-color: #f1f8e9;
+}
+
+.btn-outline-green.active, .btn-outline-green:active:not([disabled]) {
+    background-color: #eaeaea;
+    border-color: #689f38;
+}
+
+.btn-action {
+    background-color: #e9e9e9;
+    color: #000000;
+    border-color: #cccccc;
+    font-weight: 400;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-action:hover {
+    background-color: #dedede;
+}
+
+.btn-action:active {
+    background-color: #cccccc;
+}
+
+.btn:disabled, .btn[disabled] {
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.4;
+}
+
+.btn-red:disabled {
+    background-color: #ef9a9a;
+}
+
+.btn-green:disabled {
+    background-color: #aed581;
+}
+
+.btn-gray.btn-arrow:disabled::after {
+    border-left-color: #888888;
+}
