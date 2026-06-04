@@ -29,6 +29,7 @@
                 <li><a href="#table">Таблица</a></li>
                 <li><a href="#quote">Цитаты</a></li>
                 <li><a href="#code">Код</a></li>
+                <li><a href="#form">Форма</a></li>
             </ul>
         </nav>
     </header>
@@ -240,6 +241,87 @@ const Button = ({ label, onClick }) => {
             </code></pre>
         </section>
     </main>
+
+    <section id="form" class="card">
+        <h2>Форма с разнообразными элементами</h2>
+
+        <form action="#" method="post" class="styled-form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" name="name" required placeholder="Например, Маргарита">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="margarita@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Возраст</label>
+                    <input type="number" id="age" name="age" min="18" max="100">
+                </div>
+
+                <div class="form-group">
+                    <label for="birthday">Дата рождения</label>
+                    <input type="date" id="birthday" name="birthday">
+                </div>
+
+                <div class="form-group">
+                    <label for="color">Любимый цвет</label>
+                    <input type="color" id="color" name="color" value="#667eea">
+                </div>
+
+                <div class="form-group">
+                    <label for="volume">Громкость: <span id="volumeValue">50</span>%</label>
+                    <input type="range" id="volume" name="volume" min="0" max="100" value="50">
+                </div>
+
+                <div class="form-group">
+                    <label for="file">Загрузить файл</label>
+                    <input type="file" id="file" name="file" accept="image/*">
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Страна</label>
+                    <select id="country" name="country">
+                        <option value="ru">Россия</option>
+                        <option value="by">Беларусь</option>
+                        <option value="kz">Казахстан</option>
+                    </select>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="message">Сообщение</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Ваш отзыв или вопрос..."></textarea>
+                </div>
+
+                <div class="form-group full-width checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="subscribe">
+                        <span>Подписаться на рассылку</span>
+                    </label>
+                </div>
+
+                <div class="form-group full-width radio-group">
+                    <span class="radio-title">Способ связи:</span>
+                    <label class="radio-label">
+                        <input type="radio" name="contact" value="email" checked>
+                        <span>По email</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="contact" value="phone">
+                        <span>По телефону</span>
+                    </label>
+                </div>
+
+                <div class="form-group full-width button-group">
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                    <button type="reset" class="btn btn-secondary">Сбросить</button>
+                </div>
+            </div>
+        </form>
+    </section>
 
     <footer class="page-footer">
         <p>© 2026 Design Frontender — демонстрация семантической вёрстки</p>
