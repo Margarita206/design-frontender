@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Объемный переключатель</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-
 <div class="switch-container" id="toggleSwitch">
     <div class="track">
-        <div class="ball"></div>
+        <div class="track-inner">
+            <div class="track-fill"></div>
+        </div>
+        <div class="ball-canvas">
+            <canvas id="sphereCanvas" width="90" height="90"></canvas>
+        </div>
     </div>
 </div>
 
-<script>
-    const toggleSwitch = document.getElementById('toggleSwitch');
-    toggleSwitch.addEventListener('click', () => {
-        toggleSwitch.classList.toggle('active');
-    });
-</script>
-
+<script src="js/models/SphereModel.js"></script>
+<script src="js/views/SphereView.js"></script>
+<script src="js/controllers/SwitchController.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
