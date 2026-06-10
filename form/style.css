@@ -5,9 +5,9 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background-color: #DAD9E0;
-    color: #333333;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #dad9e0;
+    color: #333;
     line-height: 1.5;
     padding: 40px 20px;
 }
@@ -27,29 +27,25 @@ body {
 .form-title {
     font-size: 24px;
     font-weight: 650;
-    color: #333333;
 }
 
 .form-subtitle {
     font-size: 13px;
-    color: #333333;
     font-weight: 700;
 }
 
 .form-card {
-    background: #ffffff;
+    background: #fff;
     border: 1px solid #c8c8cc;
-    height: 100%; /* Занимает все 684px высоты из .form-wrapper */
     display: flex;
     flex-direction: column;
-
+    overflow: hidden;
     box-shadow:
-            0 4px 0 -2px #ffffff,
+            0 4px 0 -2px #fff,
             0 4px 0 -1px #c8c8cc,
-            0 8px 0 -4px #ffffff,
+            0 8px 0 -4px #fff,
             0 8px 0 -3px #c8c8cc,
             0 12px 24px rgba(0, 0, 0, 0.12);
-    overflow: hidden;
 }
 
 .form-section {
@@ -61,15 +57,13 @@ body {
 }
 
 .form-section--additional {
-    background: #FFF8C3;
+    background: #fff8c3;
 }
 
 .section-title {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 20px;
-    color: #333333;
-    text-align: left;
     padding-left: 180px;
 }
 
@@ -80,45 +74,48 @@ body {
 }
 
 .form-row-column {
-    display: flex;
-    flex-direction: row;
     align-items: flex-start;
 }
 
 .form-label {
     width: 180px;
-    font-size: 13px;
-    color: #555;
-    text-align: right;
-    padding-right: 16px;
-    flex-shrink: 0;
-    /* Идеальное вертикальное выравнивание с полем ввода (высота 32px) */
     height: 32px;
+    flex-shrink: 0;
+    padding-right: 16px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    text-align: right;
+    font-size: 13px;
+    color: #555;
 }
 
 .form-input-wrapper {
     flex: 1;
 }
 
-/* =========================================
-   5. Поля ввода (Input, Textarea, Color)
-   ========================================= */
 .text-input,
 .textarea {
-    width: 350px;
-    height: 38px;
+    width: 100%;
+    max-width: 350px;
     padding: 4px 6px;
     border: 1px solid #ddd;
-    /*border-radius: 3px;*/
     font-size: 13px;
     font-family: inherit;
-    background: #fff;
-    transition: border-color 0.2s, box-shadow 0.2s;
     color: #333;
+    background: #fff;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: .2s;
+}
+
+.text-input {
+    height: 38px;
+}
+
+.textarea {
+    min-height: 70px;
+    resize: vertical;
+    line-height: 1.5;
 }
 
 .text-input:hover,
@@ -138,23 +135,16 @@ body {
     color: #999;
 }
 
-.textarea {
-    min-height: 70px;
-    resize: vertical;
-    line-height: 1.5;
-}
-
-/* Кастомизация color input для кроссбраузерности */
 .color-input {
     width: 50px;
     height: 30px;
+    padding: 7px;
     border: 1px solid #ddd;
     border-radius: 3px;
-    cursor: pointer;
-    padding: 7px;
     background: #fff;
+    cursor: pointer;
     appearance: none;
-    transition: border-color 0.2s;
+    transition: border-color .2s;
 }
 
 .color-input:hover {
@@ -165,21 +155,13 @@ body {
     padding: 0;
 }
 
-.color-input::-webkit-color-swatch {
-    border: none;
-    border-radius: 2px;
-}
-
+.color-input::-webkit-color-swatch,
 .color-input::-moz-color-swatch {
     border: none;
     border-radius: 2px;
 }
 
-/* =========================================
-   6. Опции (Radio, Checkbox)
-   ========================================= */
 .form-options {
-    width: 100%;
     padding: 20px 32px 24px;
     background: #f5f5f5;
 }
@@ -188,9 +170,9 @@ body {
     display: flex;
     align-items: flex-start;
     margin-bottom: 12px;
+    padding-left: 180px;
     font-size: 13px;
     line-height: 1.4;
-    padding-left: 180px; /* Выравнивание с полями */
 }
 
 .option-item:last-child {
@@ -198,58 +180,53 @@ body {
 }
 
 .option-input {
-    margin: 2px 10px 0 0; /* 2px сверху идеально центрируют 16px иконку при line-height 1.4 (19.6px) */
-    cursor: pointer;
     width: 16px;
     height: 16px;
-    /*flex-shrink: 0;*/
-    accent-color: #FFFACF; /* Приводим цвет к общей теме */
+    margin: 2px 10px 0 0;
+    cursor: pointer;
+    accent-color: #fffacf;
 }
 
 .option-label {
-    cursor: pointer;
-    color: #444;
-    display: inline-block; /* или block — чтобы max-width работал */
+    display: inline-block;
     max-width: 300px;
-    word-wrap: break-word; /* перенос длинных слов */
+    color: #444;
+    cursor: pointer;
     line-height: 1.4;
+    word-wrap: break-word;
 }
 
 .option-label a {
     color: #6b5ce7;
     text-decoration: underline;
     text-underline-offset: 2px;
-    transition: color 0.2s;
+    transition: color .2s;
 }
 
 .option-label a:hover {
     color: #5a4bd4;
 }
 
-/* =========================================
-   7. Кнопка отправки
-   ========================================= */
 .form-actions {
     padding: 0 32px 32px;
     background: #f5f5f5;
-    text-align: left;
 }
 
 .submit-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    margin-left: 180px;
     padding: 12px 28px;
-    background: linear-gradient(180deg, #886FEB 0%, #5F47DA 100%);
-    color: #FFFFFF;
     border: none;
     border-radius: 4px;
+    background: linear-gradient(180deg, #886feb 0%, #5f47da 100%);
+    color: #fff;
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.2s, transform 0.1s;
-    margin-left: 180px; /* Выравнивание с полями */
+    transition: box-shadow .2s, transform .1s;
 }
 
 .submit-button:hover {
@@ -261,9 +238,6 @@ body {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* =========================================
-   8. Адаптивность (Mobile)
-   ========================================= */
 @media (max-width: 600px) {
     body {
         padding: 16px;
@@ -273,8 +247,11 @@ body {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
-        padding: 0;
         margin-bottom: 20px;
+    }
+
+    .section-title {
+        padding-left: 0;
     }
 
     .form-row {
@@ -284,33 +261,52 @@ body {
 
     .form-label {
         width: 100%;
+        height: auto;
+        justify-content: flex-start;
         text-align: left;
         padding-right: 0;
         margin-bottom: 6px;
-        height: auto;
-        justify-content: flex-start;
     }
 
     .form-input-wrapper {
         width: 100%;
     }
 
-    /*.section-title {*/
-    /*    !*font-size: 24px;*!*/
-    /*    padding-left: 0;*/
-    /*    margin-bottom: 16px;*/
-    /*}*/
-    .option-item {
-        padding-left: 0;
-        align-items: flex-start;
+    .text-input,
+    .textarea {
+        max-width: none;
     }
 
-    .option-input {
-        margin: 2px 10px 0 0;
+    .option-item {
+        padding-left: 0;
     }
 
     .submit-button {
-        margin-left: 0;
-        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 180px;
+        padding: 12px 28px;
+        border: none;
+        border-radius: 4px;
+        background: linear-gradient(135deg, #9B8CF7 0%, #7B6CE7 30%, #5A4BD4 70%, #4A3BC4 100%);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(107, 92, 231, 0.4);
+        transition: all .2s;
+    }
+
+    .submit-button:hover {
+        background: linear-gradient(135deg, #AB9CF7 0%, #8B7CE7 30%, #6A5BD4 70%, #5A4BC4 100%);
+        box-shadow: 0 6px 16px rgba(107, 92, 231, 0.5);
+        transform: translateY(-1px);
+    }
+
+    .submit-button:active {
+        background: linear-gradient(135deg, #8B7CE7 0%, #6A5BD4 30%, #4A3BC4 70%, #3A2BA4 100%);
+        transform: translateY(1px);
+        box-shadow: 0 2px 8px rgba(107, 92, 231, 0.3);
     }
 }
