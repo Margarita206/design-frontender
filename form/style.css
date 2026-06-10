@@ -13,7 +13,7 @@ body {
 }
 
 .form-wrapper {
-    max-width: 796px;
+    max-width: 696px;
     margin: 0 auto;
 }
 
@@ -37,9 +37,18 @@ body {
 }
 
 .form-card {
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    background: #ffffff;
+    border: 1px solid #c8c8cc;
+    height: 100%; /* Занимает все 684px высоты из .form-wrapper */
+    display: flex;
+    flex-direction: column;
+
+    box-shadow:
+            0 4px 0 -2px #ffffff,
+            0 4px 0 -1px #c8c8cc,
+            0 8px 0 -4px #ffffff,
+            0 8px 0 -3px #c8c8cc,
+            0 12px 24px rgba(0, 0, 0, 0.12);
     overflow: hidden;
 }
 
@@ -56,9 +65,9 @@ body {
 }
 
 .section-title {
-    font-size: 20px;
-    font-weight: 450;
-    margin-bottom: 14px;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
     color: #333333;
     text-align: left;
     padding-left: 180px;
@@ -78,7 +87,7 @@ body {
 
 .form-label {
     width: 180px;
-    font-size: 12px;
+    font-size: 13px;
     color: #555;
     text-align: right;
     padding-right: 16px;
@@ -99,12 +108,12 @@ body {
    ========================================= */
 .text-input,
 .textarea {
-    width: 424px;
+    width: 350px;
     height: 38px;
     padding: 4px 6px;
     border: 1px solid #ddd;
     /*border-radius: 3px;*/
-    font-size: 12px;
+    font-size: 13px;
     font-family: inherit;
     background: #fff;
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -178,7 +187,7 @@ body {
     display: flex;
     align-items: flex-start;
     margin-bottom: 12px;
-    font-size: 12px;
+    font-size: 13px;
     line-height: 1.4;
     padding-left: 180px; /* Выравнивание с полями */
 }
@@ -200,7 +209,7 @@ body {
     cursor: pointer;
     color: #444;
     display: inline-block; /* или block — чтобы max-width работал */
-    max-width: 354px;
+    max-width: 300px;
     word-wrap: break-word; /* перенос длинных слов */
     line-height: 1.4;
 }
