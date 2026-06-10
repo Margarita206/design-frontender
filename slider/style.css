@@ -14,66 +14,63 @@ body {
     padding: 20px;
 }
 
-/* Контейнер-обертка (аналог .track-wrapper) */
-.showcase-container {
-    width: 100%;
-    max-width: 1387px; /* Ограничение ширины как в вашем SVG */
-    overflow: hidden; /* Обязательно для работы маски */
-
-    /* МНОГОСЛОЙНАЯ МАСКА (как в .track-wrapper) */
-    -webkit-mask:
-        /* 1. Горизонтальное затухание по бокам (15% и 85%) */
-            linear-gradient(90deg, transparent 0, black 15%, black 85%, transparent 100%) 0 50% / 100% calc(100% - 40px) no-repeat,
-                /* 2. Сплошная видимая полоса сверху (высота 20px) */
-            linear-gradient(0deg, black, black) 50% 0 / 100% 20px no-repeat,
-                /* 3. Сплошная видимая полоса снизу (высота 20px) */
-            linear-gradient(0deg, black, black) 50% 100% / 100% 20px no-repeat;
-
-    mask:
-            linear-gradient(90deg, transparent 0, black 15%, black 85%, transparent 100%) 0 50% / 100% calc(100% - 40px) no-repeat,
-            linear-gradient(0deg, black, black) 50% 0 / 100% 20px no-repeat,
-            linear-gradient(0deg, black, black) 50% 100% / 100% 20px no-repeat;
+.slider {
+    height: 250px;
+    margin: auto;
+    position: relative;
+    width: 90%;
+    display: grid;
+    place-items: center;
 }
 
-/*
- * 💡 ВАЖНО: Если вам нужно ТОЛЬКО боковое затухание (без верхних и нижних полос),
- * закомментируйте блок .showcase-container выше и используйте этот упрощенный вариант.
- * Он гораздо надежнее и реже вызывает проблемы с отображением:
- *
- * .showcase-container {
- *     width: 100%;
- *     max-width: 1387px;
- *     overflow: hidden;
- *     -webkit-mask-image: linear-gradient(to right, transparent 0, black 15%, black 85%, transparent 100%);
- *     mask-image: linear-gradient(to right, transparent 0, black 15%, black 85%, transparent 100%);
- * }
- */
+/* Общие стили для теней по краям */
+.slider::before,
+.slider::after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 10%; /* Оптимальная ширина для плавного затухания */
+    z-index: 2;
+    pointer-events: none; /* КЛЮЧЕВОЕ: позволяет кликать и скроллить сквозь градиент */
+}
 
-/* Скроллбар теперь привязан к слайдеру, чтобы не обрезаться маской контейнера */
+/* Левое затухание: от цвета фона к прозрачному (слева направо) */
+.slider::before {
+    left: 0;
+    top: 0;
+    background: linear-gradient(to right, #f9f9f9 0%, rgba(249, 249, 249, 0) 100%);
+}
+
+/* Правое затухание: от прозрачного к цвету фона (справа налево) */
+.slider::after {
+    right: 0;
+    top: 0;
+    background: linear-gradient(to left, #f9f9f9 0%, rgba(249, 249, 249, 0) 100%);
+}
+
+/* Скроллбар привязан к слайдеру */
 .showcase-slider {
     display: flex;
-    gap: 20px;
-    padding: 0 40px; /* Отступы, чтобы карточки не прилипали к краям при прокрутке */
-    overflow-x: auto; /* Прокрутка здесь */
+    /*gap: 20px;*/
+    padding: 0 40px;
+    overflow-x: auto;
     overflow-y: hidden;
-    scroll-behavior: smooth; /* Плавная прокрутка */
-
-    /* Стилизация скроллбара для Firefox */
-    scrollbar-width: thin;
-    scrollbar-color: #801515 #e8e8e8;
+    scroll-behavior: smooth;
 }
 
 .showcase-slider::-webkit-scrollbar {
     height: 12px;
+    border-radius: 12px
 }
 
 .showcase-slider::-webkit-scrollbar-track {
     background: #e8e8e8;
+    border-radius: 12px
 }
 
 .showcase-slider::-webkit-scrollbar-thumb {
     background: #801515;
-    border-radius: 0px;
+    border-radius: 12px;
 }
 
 .showcase-slider::-webkit-scrollbar-thumb:hover {
@@ -82,7 +79,7 @@ body {
 
 .product-card {
     flex: 0 0 25%;
-    min-width: 250px;
+    /*min-width: 250px;*/
     border-right: 1px solid #eeeeee;
     padding: 20px;
     display: flex;
@@ -96,11 +93,11 @@ body {
 
 .product-image {
     width: 100%;
-    height: 200px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .product-image img {
