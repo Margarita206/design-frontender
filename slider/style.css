@@ -14,38 +14,70 @@ body {
     padding: 20px;
 }
 
+/* Контейнер-обертка (аналог .track-wrapper) */
 .showcase-container {
     width: 100%;
-    overflow-x: auto;
-    mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+    max-width: 1387px; /* Ограничение ширины как в вашем SVG */
+    overflow: hidden; /* Обязательно для работы маски */
+
+    /* МНОГОСЛОЙНАЯ МАСКА (как в .track-wrapper) */
+    -webkit-mask:
+        /* 1. Горизонтальное затухание по бокам (15% и 85%) */
+            linear-gradient(90deg, transparent 0, black 15%, black 85%, transparent 100%) 0 50% / 100% calc(100% - 40px) no-repeat,
+                /* 2. Сплошная видимая полоса сверху (высота 20px) */
+            linear-gradient(0deg, black, black) 50% 0 / 100% 20px no-repeat,
+                /* 3. Сплошная видимая полоса снизу (высота 20px) */
+            linear-gradient(0deg, black, black) 50% 100% / 100% 20px no-repeat;
+
+    mask:
+            linear-gradient(90deg, transparent 0, black 15%, black 85%, transparent 100%) 0 50% / 100% calc(100% - 40px) no-repeat,
+            linear-gradient(0deg, black, black) 50% 0 / 100% 20px no-repeat,
+            linear-gradient(0deg, black, black) 50% 100% / 100% 20px no-repeat;
 }
 
-.showcase-container::-webkit-scrollbar {
-    height: 12px;
-}
+/*
+ * 💡 ВАЖНО: Если вам нужно ТОЛЬКО боковое затухание (без верхних и нижних полос),
+ * закомментируйте блок .showcase-container выше и используйте этот упрощенный вариант.
+ * Он гораздо надежнее и реже вызывает проблемы с отображением:
+ *
+ * .showcase-container {
+ *     width: 100%;
+ *     max-width: 1387px;
+ *     overflow: hidden;
+ *     -webkit-mask-image: linear-gradient(to right, transparent 0, black 15%, black 85%, transparent 100%);
+ *     mask-image: linear-gradient(to right, transparent 0, black 15%, black 85%, transparent 100%);
+ * }
+ */
 
-.showcase-container::-webkit-scrollbar-track {
-    background: #e8e8e8;
-}
+/* Скроллбар теперь привязан к слайдеру, чтобы не обрезаться маской контейнера */
+.showcase-slider {
+    display: flex;
+    gap: 20px;
+    padding: 0 40px; /* Отступы, чтобы карточки не прилипали к краям при прокрутке */
+    overflow-x: auto; /* Прокрутка здесь */
+    overflow-y: hidden;
+    scroll-behavior: smooth; /* Плавная прокрутка */
 
-.showcase-container::-webkit-scrollbar-thumb {
-    background: #801515;
-    border-radius: 0px;
-}
-
-.showcase-container::-webkit-scrollbar-thumb:hover {
-    background: #6a1212;
-}
-
-.showcase-container {
+    /* Стилизация скроллбара для Firefox */
     scrollbar-width: thin;
     scrollbar-color: #801515 #e8e8e8;
 }
 
-.showcase-slider {
-    display: flex;
-    gap: 20px;
-    padding: 0 40px;
+.showcase-slider::-webkit-scrollbar {
+    height: 12px;
+}
+
+.showcase-slider::-webkit-scrollbar-track {
+    background: #e8e8e8;
+}
+
+.showcase-slider::-webkit-scrollbar-thumb {
+    background: #801515;
+    border-radius: 0px;
+}
+
+.showcase-slider::-webkit-scrollbar-thumb:hover {
+    background: #6a1212;
 }
 
 .product-card {
