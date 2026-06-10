@@ -1,125 +1,271 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+    box-sizing: border-box; /* padding и border входят в ширину элемента */
+    margin: 0;             /* убираем внешние отступы */
+    padding: 0;            /* убираем внутренние отступы */
+    font-family: Arial, sans-serif; /* базовый шрифт сайта */
 }
 
 body {
-    background-color: #f9f9f9;
+    background-color: #FDFDFD; /* светло-серый фон страницы */
+
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    justify-content: center; /* центрируем содержимое по горизонтали */
+    align-items: center;     /* центрируем содержимое по вертикали */
+
+    min-height: 100vh; /* высота минимум на весь экран */
+
+    padding: 20px; /* небольшой отступ от краев окна браузера */
 }
 
+/* =========================================================
+   ВНЕШНИЙ КОНТЕЙНЕР СЛАЙДЕРА
+   ========================================================= */
+
 .slider {
-    height: 250px;
+    /* height удалён полностью */
     margin: auto;
     position: relative;
-    width: 90%;
+    width: 1384px;
     display: grid;
     place-items: center;
 }
 
-/* Общие стили для теней по краям */
+
 .slider::before,
 .slider::after {
     content: "";
-    height: 100%;
     position: absolute;
-    width: 10%; /* Оптимальная ширина для плавного затухания */
+
+    top: 0;
+    bottom: 12px; /* высота скроллбара */
     z-index: 2;
-    pointer-events: none; /* КЛЮЧЕВОЕ: позволяет кликать и скроллить сквозь градиент */
+    width: 60px;
+    pointer-events: none;
 }
 
-/* Левое затухание: от цвета фона к прозрачному (слева направо) */
+/* ЛЕВОЕ ЗАТУХАНИЕ */
 .slider::before {
     left: 0;
     top: 0;
-    background: linear-gradient(to right, #f9f9f9 0%, rgba(249, 249, 249, 0) 100%);
+
+    background: linear-gradient(
+            to right,
+            #f9f9f9 0%,
+            rgba(249, 249, 249, 0) 100%
+    );
 }
 
-/* Правое затухание: от прозрачного к цвету фона (справа налево) */
+/* ПРАВОЕ ЗАТУХАНИЕ */
 .slider::after {
     right: 0;
     top: 0;
-    background: linear-gradient(to left, #f9f9f9 0%, rgba(249, 249, 249, 0) 100%);
+
+    background: linear-gradient(
+            to left,
+            #f9f9f9 0%,
+            rgba(249, 249, 249, 0) 100%
+    );
 }
 
-/* Скроллбар привязан к слайдеру */
+/* =========================================================
+   ГОРИЗОНТАЛЬНЫЙ КОНТЕЙНЕР ТОВАРОВ
+   ========================================================= */
+
 .showcase-slider {
     display: flex;
-    /*gap: 20px;*/
-    padding: 0 40px;
+    position: relative;
+    /* располагаем товары в одну строку */
+
+    /*padding: 0 40px;*/
+    /*
+       внутренние отступы слева и справа.
+
+       Благодаря этому первая и последняя карточки
+       не прилипают к краям контейнера.
+    */
+
     overflow-x: auto;
-    overflow-y: hidden;
+    /* включаем горизонтальную прокрутку */
+
+    overflow-y: auto;
+    /* запрещаем вертикальную прокрутку */
+
     scroll-behavior: smooth;
+    border-bottom: 1px solid #eeeeee;
+    z-index: 1;
+    /* плавный скролл */
 }
 
+
+.showcase-slider::after {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 12px; /* высота скроллбара */
+
+    height: 1px;
+    background: #eeeeee;
+}
+
+/* =========================================================
+   СТИЛИЗАЦИЯ СКРОЛЛБАРА (Chrome, Edge, Safari)
+   ========================================================= */
+
+/* Высота полосы прокрутки */
 .showcase-slider::-webkit-scrollbar {
     height: 12px;
-    border-radius: 12px
-}
-
-.showcase-slider::-webkit-scrollbar-track {
-    background: #e8e8e8;
-    border-radius: 12px
-}
-
-.showcase-slider::-webkit-scrollbar-thumb {
-    background: #801515;
     border-radius: 12px;
 }
 
+/* Фон дорожки скроллбара */
+.showcase-slider::-webkit-scrollbar-track {
+    background: #e8e8e8;
+
+    border-radius: 12px;
+    /*
+       Скругляем дорожку.
+       Чем больше значение,
+       тем более "капсульной" она выглядит.
+    */
+}
+
+/* Ползунок */
+.showcase-slider::-webkit-scrollbar-thumb {
+    background: #83141F;
+
+    border-radius: 12px;
+    /* скругленные края ползунка */
+}
+
+/* Цвет при наведении */
 .showcase-slider::-webkit-scrollbar-thumb:hover {
     background: #6a1212;
 }
 
+/* =========================================================
+   ОТДЕЛЬНЫЙ ТОВАР
+   ========================================================= */
+
 .product-card {
     flex: 0 0 25%;
-    /*min-width: 250px;*/
+    /*
+       Каждый товар занимает 25% ширины контейнера.
+
+       При ширине контейнера 1000px:
+       карточка будет ~250px.
+    */
+
     border-right: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+    /*
+       Вертикальная разделительная линия между товарами.
+    */
+
     padding: 20px;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /*
+       Фото сверху,
+       текст снизу.
+    */
+
+    /*justify-content: space-between;*/
 }
 
+/* У последнего товара разделитель не нужен */
 .product-card:last-child {
     border-right: none;
 }
 
+/* =========================================================
+   БЛОК С ИЗОБРАЖЕНИЕМ
+   ========================================================= */
+
 .product-image {
     width: 100%;
+
     height: 300px;
+    /*
+       Фиксированная высота области изображения.
+       Все товары будут одинаковой высоты.
+    */
+
     display: flex;
     justify-content: center;
     align-items: center;
+    /*
+       Центрируем изображение по обеим осям.
+    */
+
     margin-bottom: 24px;
+    /* расстояние до текста */
 }
 
+/* Само изображение */
 .product-image img {
     max-width: 100%;
+    /*
+       Не позволяет картинке вылезать за контейнер.
+    */
+
     max-height: 100%;
+    /*
+       Ограничиваем высоту изображения.
+    */
+
     object-fit: contain;
+    /*
+       Картинка полностью помещается в контейнер,
+       не обрезаясь и не растягиваясь.
+    */
 }
+
+/* =========================================================
+   ТЕКСТОВАЯ ИНФОРМАЦИЯ
+   ========================================================= */
 
 .product-info {
+    padding: 0 20px 0 10px;
     font-size: 14px;
+    /* размер текста */
+
     line-height: 1.5;
+    /* межстрочный интервал */
+
     color: #444444;
+    /* темно-серый цвет текста */
 }
 
+/* =========================================================
+   АДАПТИВНОСТЬ
+   ========================================================= */
+
+/*
+   Планшеты
+*/
 @media (max-width: 900px) {
     .product-card {
         flex: 0 0 45%;
+        /*
+           Показываем примерно две карточки одновременно.
+        */
     }
 }
 
+/*
+   Смартфоны
+*/
 @media (max-width: 600px) {
     .product-card {
         flex: 0 0 80%;
+        /*
+           Показываем одну карточку и часть следующей.
+           Пользователь сразу понимает,
+           что список можно листать.
+        */
     }
 }
