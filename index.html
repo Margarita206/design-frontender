@@ -1,52 +1,89 @@
 <!doctype html>
 <head>
-	<meta charset="utf-8">
-	<title>Тестовые задания</title>
-	<style>
-	body {
-		font-size: 1.3em;
-	}
+    <meta charset="utf-8">
+    <title>Тестовые задания</title>
+    <style>
+        body {
+            font-size: 1.3em;
+        }
 
-	a,
-	.spoiler__label {
-		color: blue;
-	}
-	a:hover,
-	.spoiler__label:hover {
-		color: red;
-	}
-	
-	.spoiler__label {
-		border-bottom: 1px dotted;
-		cursor: pointer;
-		user-select: none;
-	}
-	.spoiler__content {
-		display: none;
-	}
-	.spoiler__field {
-		position: absolute;
-		visibility: hidden;
-		pointer-events: none;
-	}
-	.spoiler__field:checked ~ .spoiler__content {
-		display: block;
-	}
-	</style>
-    <nav style="background: #f5f5f5; padding: 20px; margin: 20px 0;">
-        <h2>Навигация по решениям:</h2>
-        <ul style="list-style: none; padding: 0; display: grid; gap: 10px;">
-            <li><a href="text/index.html" target="_blank">Текст</a></li>
-            <li><a href="form/index.html" target="_blank">Форма</a></li>
-            <li><a href="just-buttons/index.html" target="_blank">Кнопки</a></li>
-            <li><a href="scheme/index.html" target="_blank">Схема</a></li>
-            <li><a href="slider/index.html" target="_blank">Витрина</a></li>
-            <li><a href="black-page/index.html" target="_blank">Чёрная страница</a></li>
-            <li><a href="beautiful-button/button/index.html" target="_blank">Красивые кнопки</a></li>
-            <li><a href="beautiful-button/checkbox/index.html" target="_blank">Чекбокс</a></li>
-        </ul>
-    </nav>
+        a,
+        .spoiler__label {
+            color: blue;
+        }
+        a:hover,
+        .spoiler__label:hover {
+            color: red;
+        }
+
+        .spoiler__label {
+            border-bottom: 1px dotted;
+            cursor: pointer;
+            user-select: none;
+        }
+        .spoiler__content {
+            display: none;
+        }
+        .spoiler__field {
+            position: absolute;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .spoiler__field:checked ~ .spoiler__content {
+            display: block;
+        }
+
+        .nav {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .nav h2 {
+            margin: 0 0 15px 0;
+            font-size: 1.2em;
+        }
+
+        .nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 8px;
+        }
+
+        .nav a {
+            display: block;
+            padding: 8px 12px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .nav a:hover {
+            background: #f0f0f0;
+            border-color: #999;
+        }
+    </style>
 </head>
+<body>
+<nav class="nav">
+    <h2>Навигация по решениям:</h2>
+    <ul>
+        <li><a href="text/index.html" target="_blank">Текст</a></li>
+        <li><a href="form/index.html" target="_blank">Форма</a></li>
+        <li><a href="just-buttons/index.html" target="_blank">Кнопки</a></li>
+        <li><a href="scheme/index.html" target="_blank">Схема</a></li>
+        <li><a href="slider/index.html" target="_blank">Витрина</a></li>
+        <li><a href="black-page/index.html" target="_blank">Чёрная страница</a></li>
+        <li><a href="beautiful-button/button/index.html" target="_blank">Красивые кнопки</a></li>
+        <li><a href="beautiful-button/checkbox/index.html" target="_blank">Чекбокс</a></li>
+    </ul>
+</nav>
 
 <pre>
 <strong>Тестовые задания 1.0.1</strong>
@@ -187,3 +224,5 @@
 Удачи!</div></div>
 
 </pre>
+</body>
+</html>
